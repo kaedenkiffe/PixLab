@@ -260,6 +260,18 @@ public class Picture extends SimplePicture
     }
   }
   
+  public void fixUnderWater(){
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        pixelObj.setGreen(50);
+        
+      }
+    }
+  }
+  
   
   
   

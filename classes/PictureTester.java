@@ -74,6 +74,13 @@ public class PictureTester
     swan.explore();
   }
   
+  public static void testFixUnderWater() {
+    Picture water = new Picture("images/water.jpg");
+    water.explore();
+    water.fixUnderWater();
+    water.explore();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
