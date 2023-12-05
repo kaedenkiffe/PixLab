@@ -74,7 +74,7 @@ public class PictureTester
     swan.explore();
   }
   
-  public static void testFixUnderWater() {
+  public static void testFixUnderwater() {
     Picture water = new Picture("images/water.jpg");
     water.explore();
     water.fixUnderWater();
@@ -94,7 +94,7 @@ public class PictureTester
     //testKeepOnlyGreen();
     testNegate();
     testGrayscale();
-    //testFixUnderwater();
+    testFixUnderwater();
     //testMirrorVertical();
     //testMirrorTemple();
     //testMirrorArms();
