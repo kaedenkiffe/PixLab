@@ -303,18 +303,35 @@ public class Picture extends SimplePicture
     } 
   }
   
-  public void mirrorDiagonal() {
+  public void makeHighway() {
     Pixel[][] pixels = this.getPixels2D();
-    Pixel topRightCorner = null;
-    Pixel bottomLeftCorner = null;
+    Pixel bottomRight = null;
+    Pixel topLeft = null;
     int width = pixels.length;
     for (int row = 0; row < pixels.length; row++)
     {
       for (int col = 0; col < pixels[0].length; col++)
       {
-        topRightCorner = pixels[row][col];
-        bottomLeftCorner = pixels[width - 1 - row][col];
-        bottomLeftCorner.setColor(topRightCorner.getColor());
+        bottomRight = pixels[row][col];
+        topLeft = pixels[width - 1 - row][width - 1 - row];
+        bottomRight.setColor(topLeft.getColor());
+      }
+    } 
+  }
+  
+  public void mirrorDiagonal() {
+      Pixel[][] pixels = this.getPixels2D();
+    Pixel topRight = null;
+    Pixel bottomLeft = null;
+    int width = pixels.length;
+    System.out.println(pixels.length);
+    for (int row = 0; row < pixels.length; row++)
+    {
+      for (int col = 0; col < pixels.length; col++)
+      {
+        bottomLeft= pixels[width - 1 - row][col];
+        topRight = pixels[col][width-1-row];
+        topRight.setColor(bottomLeft.getColor());
       }
     } 
   }
