@@ -102,6 +102,15 @@ public class PictureTester
     caterpillar.explore();
     caterpillar.mirrorDiagonal();
     caterpillar.explore();
+    
+  }
+  
+  public static void testMirrorArms()
+  {
+    Picture temple = new Picture("snowman.jpg");
+    temple.explore();
+    temple.mirrorArms();
+    temple.explore();
   }
   
   /** Main method for testing.  Every class can have a main
@@ -120,8 +129,8 @@ public class PictureTester
     testFixUnderwater();
     testMirrorVertical();
     testMirrorVerticalRightToLeft();
-    //testMirrorTemple();
-    //testMirrorArms();
+    testMirrorTemple();
+    testMirrorArms();
     //testMirrorGull();
     testMirrorDiagonal();
     //testCollage();
