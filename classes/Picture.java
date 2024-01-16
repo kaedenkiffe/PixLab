@@ -239,6 +239,24 @@ public class Picture extends SimplePicture
     this.write("collage.jpg");
   }
   
+  public void myCollage() {
+    Picture DCS1 = new Picture("robot.jpg");
+    Picture DCS2 = new Picture("robot.jpg");
+    Picture DCS3 = new Picture("robot.jpg");
+    this.copy(DCS1,0,0);
+    this.copy(DCS2,200,0);
+    this.copy(DCS3,300,0);
+    Picture dcsNoBlue = new Picture(DCS2);
+    Picture dcsMirrorHorizontal = new Picture(DCS1);
+    dcsNoBlue.zeroBlue();
+    dcsMirrorHorizontal.mirrorHorizontal();
+    this.copy(dcsNoBlue,300,0);
+    this.copy(dcsMirrorHorizontal,400,0);
+    this.copy(DCS2,500,0);
+    this.mirrorVertical();
+    this.write("mycollage.jpg");
+  }
+  
   
   /** Method to show large changes in color 
     * @param edgeDist the distance for finding edges
@@ -367,6 +385,28 @@ public class Picture extends SimplePicture
         topRight.setColor(bottomLeft.getColor());
       }
     } 
+  }
+  
+  public void mirrorGull() {
+    int mirrorPoint = 387;
+    Pixel leftPixel = null;
+    Pixel rightPixel = null;
+    int count = 0;
+    Pixel[][] pixels = this.getPixels2D();
+    
+    // loop through the rows
+    for (int row = 231; row < 320; row++)
+    {
+      // loop from 13 to just before the mirror point
+      for (int col = 235; col < mirrorPoint; col++)
+      {
+        
+        leftPixel = pixels[row][col];      
+        rightPixel = pixels[row]                       
+                         [mirrorPoint - col + mirrorPoint];
+        rightPixel.setColor(leftPixel.getColor());
+      }
+    }
   }
   
   
